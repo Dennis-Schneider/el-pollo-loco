@@ -4,7 +4,7 @@ class MovableObject {
   img;
   height = 280;
   width = 150;
-  speed = 0.15;
+  speed = 0.2;
   speedY = 0;
   acceleration = 2;
   imageCache = [];
@@ -29,6 +29,18 @@ class MovableObject {
     this.img.src = path;
   }
 
+  draw(ctx) {
+    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+  }
+
+  drawFrame(ctx) {
+    ctx.beginPath();
+    ctx.lineWidth = "2";
+    ctx.strokeStyle = "blue";
+    ctx.rect(this.x, this.y, this.width, this.height);
+    ctx.stroke();
+  }
+
   loadImages(arr) {
     arr.forEach((path) => {
       let img = new Image();
@@ -45,13 +57,11 @@ class MovableObject {
   }
 
   moveRight() {
-    this.x += this.speed + 7;
-    this.otherDirection = false;
+    this.x += this.speed;
   }
 
   moveLeft() {
-    this.x -= this.speed + 7;
-    this.otherDirection = true;
+    this.x -= this.speed;
   }
 
   jump() {
