@@ -18,16 +18,25 @@ body {
   background-position: center;
   font-family: "rio-grande", Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px) brightness(0.8);
 }
 
 h1 {
   text-align: center;
   font-size: 72px;
   padding: 24px;
+  background: linear-gradient(
+    180deg,
+    rgb(121, 73, 9, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(121, 73, 9, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 canvas {
+  border-radius: 25px;
   background-color: black;
   box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
 }
