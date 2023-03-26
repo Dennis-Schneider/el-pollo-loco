@@ -22,6 +22,22 @@ class Character extends MovableObject {
     "img/2_character_pepe/3_jump/J-39.png",
   ];
 
+  images_hurt = [
+    "img/2_character_pepe/4_hurt/H-41.png",
+    "img/2_character_pepe/4_hurt/H-42.png",
+    "img/2_character_pepe/4_hurt/H-43.png",
+  ];
+
+  images_dead = [
+    "img/2_character_pepe/5_dead/D-51.png",
+    "img/2_character_pepe/5_dead/D-52.png",
+    "img/2_character_pepe/5_dead/D-53.png",
+    "img/2_character_pepe/5_dead/D-54.png",
+    "img/2_character_pepe/5_dead/D-55.png",
+    "img/2_character_pepe/5_dead/D-56.png",
+    "img/2_character_pepe/5_dead/D-57.png",
+  ];
+
   world;
   walking_sound = new Audio("audio/walking.mp3");
 
@@ -29,6 +45,8 @@ class Character extends MovableObject {
     super().loadImage("img/2_character_pepe/2_walk/W-21.png");
     this.loadImages(this.images_walking);
     this.loadImages(this.images_jumping);
+    this.loadImages(this.images_hurt);
+    this.loadImages(this.images_dead);
     this.applyGravity();
     this.animate();
   }
@@ -56,6 +74,11 @@ class Character extends MovableObject {
     }, 1000 / 60);
 
     setInterval(() => {
+      if (this.isDead()) {
+        this.playAnimation(this.images_dead);
+      } else if (this.isHurt()) {
+        this.playAnimation(this.images_hurt);
+      }
       if (this.isAboveGround()) {
         this.playAnimation(this.images_jumping);
       } else {
