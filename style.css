@@ -1,9 +1,33 @@
+@font-face {
+  font-family: "rio-grande";
+  src: url("/fonts/rio-grande.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-image: url("img/5_background/background.png");
+  background-position: center;
+  font-family: "rio-grande", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+}
+
+h1 {
+  text-align: center;
+  font-size: 72px;
+  padding: 24px;
 }
 
 canvas {
   background-color: black;
+  box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
 }
