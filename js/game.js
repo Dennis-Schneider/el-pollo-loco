@@ -9,44 +9,32 @@ function init() {
   console.log("My Character is", world.character);
 }
 
-window.addEventListener("keydown", (e) => {
-  if (e.keyCode == 39) {
+window.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowRight" || event.key == "d") {
     keyboard.RIGHT = true;
   }
-  if (e.keyCode == 37) {
+  if (event.key == "ArrowLeft" || event.key == "a") {
     keyboard.LEFT = true;
   }
-  if (e.keyCode == 40) {
-    keyboard.DOWN = true;
-  }
-  if (e.keyCode == 38) {
+  if (event.key == "ArrowUp" || event.key == "w" || event.key == " ") {
     keyboard.UP = true;
   }
-  if (e.keyCode == 32) {
-    keyboard.SPACE = true;
-  }
-  if (e.keyCode == 68) {
+  if (event.key == "e") {
     keyboard.D = true;
   }
 });
 
-window.addEventListener("keyup", (e) => {
-  if (e.keyCode == 39) {
+window.addEventListener("keyup", (event) => {
+  if (event.key == "ArrowRight" || event.key == "d") {
     keyboard.RIGHT = false;
   }
-  if (e.keyCode == 37) {
+  if (event.key == "ArrowLeft" || event.key == "a") {
     keyboard.LEFT = false;
   }
-  if (e.keyCode == 40) {
-    keyboard.DOWN = false;
-  }
-  if (e.keyCode == 38) {
+  if (event.key == "ArrowUp" || event.key == "w" || event.key == " ") {
     keyboard.UP = false;
   }
-  if (e.keyCode == 32) {
-    keyboard.SPACE = false;
-  }
-  if (e.keyCode == 68) {
+  if (event.key == "e") {
     keyboard.D = false;
   }
 });

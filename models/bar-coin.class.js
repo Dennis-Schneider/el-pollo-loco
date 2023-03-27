@@ -15,10 +15,10 @@ class CoinBar extends DrawableObject {
       "img/7_statusbars/1_statusbar/1_statusbar_coin/orange/100.png"
     );
     this.loadImages(this.images_coins);
-    this.x = 500;
-    this.y = 0;
+    this.x = 20;
+    this.y = 90;
     this.width = 200;
-    this.height = 60;
+    this.height = 54;
     this.setPercentage(0);
   }
   /**
