@@ -6,6 +6,7 @@ class MovableObject extends DrawableObject {
   energy = 100;
   bottle = 0;
   lastHit = 0;
+  lastMove = 0;
 
   applyGravity() {
     setInterval(() => {
@@ -69,6 +70,16 @@ class MovableObject extends DrawableObject {
 
   isDead() {
     return this.energy == 0;
+  }
+
+  getMoveTimeStamp() {
+    this.lastMove = new Date().getTime();
+  }
+
+  fallInSleep() {
+    let timepassed = new Date().getTime() - this.lastMove;
+    timepassed = timepassed / 1000;
+    return timepassed > 3.0;
   }
 
   playAnimation(images) {
