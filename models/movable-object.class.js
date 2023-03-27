@@ -5,8 +5,10 @@ class MovableObject extends DrawableObject {
   otherDirection = false;
   energy = 100;
   bottle = 0;
+  coins = 0;
   lastHit = 0;
   lastMove = 0;
+  splash = false;
 
   applyGravity() {
     setInterval(() => {
@@ -43,6 +45,15 @@ class MovableObject extends DrawableObject {
   //     this.y + this.offsetY <= mo.y + mo.height
   //   );
   // }
+
+  /**
+   * when coin is collectable, add 20 to this.coin
+   */
+  collectCoins() {
+    if (this.coins < 100) {
+      this.coins += 20;
+    }
+  }
 
   /**
    * when bottle is collectable, add 20 to this.bottle
