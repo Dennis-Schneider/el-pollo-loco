@@ -70,7 +70,7 @@ class Character extends MovableObject {
         this.jump();
       }
 
-      this.world.camera_x = -this.x + 100;
+      this.world.camera_x = -this.x + 85;
     }, 1000 / 60);
 
     setInterval(() => {
@@ -87,6 +87,6 @@ class Character extends MovableObject {
           this.playAnimation(this.images_walking);
         }
       }
-    }, 50);
+    }, 130);
   }
 }
