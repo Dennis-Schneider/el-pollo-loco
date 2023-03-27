@@ -4,6 +4,7 @@ class MovableObject extends DrawableObject {
   acceleration = 2;
   otherDirection = false;
   energy = 100;
+  bottle = 0;
   lastHit = 0;
 
   applyGravity() {
@@ -41,6 +42,15 @@ class MovableObject extends DrawableObject {
   //     this.y + this.offsetY <= mo.y + mo.height
   //   );
   // }
+
+  /**
+   * when bottle is collectable, add 20 to this.bottle
+   */
+  collectBottle() {
+    if (this.bottle < 100) {
+      this.bottle += 20;
+    }
+  }
 
   hit() {
     this.energy -= 10;
