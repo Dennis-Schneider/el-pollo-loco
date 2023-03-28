@@ -7,6 +7,7 @@ class MovableObject extends DrawableObject {
   bottle = 0;
   coins = 0;
   lastHit = 0;
+  energyChicken = 50;
   lastMove = 0;
   splash = false;
 
@@ -73,6 +74,16 @@ class MovableObject extends DrawableObject {
     }
   }
 
+  /**
+   * when the enemies are hitet, subtract 50
+   */
+  chickenHit() {
+    this.energyChicken -= 50;
+    if (this.energyChicken <= 0) {
+      this.energyChicken = 0;
+    }
+  }
+
   isHurt() {
     let timepassed = new Date().getTime() - this.lastHit;
     timepassed = timepassed / 1000; // Difference in seconds
@@ -110,5 +121,12 @@ class MovableObject extends DrawableObject {
 
   jump() {
     this.speedY = 25;
+  }
+
+  /**
+   * the the height of the jump after kill
+   */
+  jumpAfterKill() {
+    this.speedY = 15;
   }
 }

@@ -26,6 +26,7 @@ class World {
 
   run() {
     setInterval(() => {
+      this.checkFromWhereColiding();
       this.checkCollectionBottles();
       this.checkCollisions();
       this.checkThrowObject();
@@ -70,6 +71,35 @@ class World {
       this.throwableObjects.push(collectedBottle);
       this.collectedBottle.splice(0, 1);
     }
+  }
+
+  /**
+   * check if the enemy hits in front/back or from top
+   */
+  checkFromWhereColiding() {
+    if (this.character.isAboveGround()) {
+      this.hitChickenfromTop();
+    } else {
+      this.checkCollisions();
+    }
+  }
+
+  /**
+   * if hit the enemy from top, the character dont loose energy, so only the chicken does
+   */
+  hitChickenfromTop() {
+    this.level.enemies.forEach((enemies) => {
+      if (
+        this.character.isColliding(enemies) &&
+        this.character.isAboveGround()
+      ) {
+        if (enemies.energyChicken == 50) {
+          // this.chickenHitSound();
+          enemies.chickenHit();
+          this.character.jumpAfterKill();
+        }
+      }
+    });
   }
 
   checkCollisions() {
