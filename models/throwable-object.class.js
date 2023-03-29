@@ -1,4 +1,10 @@
 class ThrowableObject extends MovableObject {
+  offset = {
+    top: 10,
+    bottom: 0,
+    left: 10,
+    right: 10,
+  };
   splashInterval = [];
 
   image_bottle_rotation = [

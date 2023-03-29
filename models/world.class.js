@@ -90,11 +90,10 @@ class World {
   hitChickenfromTop() {
     this.level.enemies.forEach((enemies) => {
       if (
-        this.character.isColliding(enemies) &&
-        this.character.isAboveGround()
+        this.character.isColliding(enemies) && // pepe is colliding AND...
+        this.character.isAboveGround() // ...above ground - also springend!
       ) {
         if (enemies.energyChicken == 50) {
-          // this.chickenHitSound();
           enemies.chickenHit();
           this.character.jumpAfterKill();
         }

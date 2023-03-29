@@ -1,6 +1,14 @@
 class Character extends MovableObject {
   deadIntervalId = [];
   speed = 7;
+  height = 280;
+  width = 150;
+  offset = {
+    top: 110,
+    bottom: 10,
+    left: 20,
+    right: 20,
+  };
 
   images_idle = [
     "img/2_character_pepe/1_idle/idle/I-1.png",

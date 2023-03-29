@@ -3,10 +3,10 @@ class Bottle extends MovableObject {
   width = 80;
   y = 352;
   offset = {
-    top: 15,
+    top: 10,
     bottom: 0,
-    left: 50,
-    right: 40,
+    left: 20,
+    right: 10,
   };
   images_bottle_ground = ["img/6_salsa_bottle/1_salsa_bottle_on_ground.png"];
 
@@ -30,6 +30,6 @@ class Bottle extends MovableObject {
       if (this.collectBottle()) {
         loadImage("img/6_salsa_bottle/1_salsa_bottle_on_ground.png");
       }
-    }, 60);
+    }, 50);
   }
 }
