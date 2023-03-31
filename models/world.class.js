@@ -1,7 +1,6 @@
 class World {
   character = new Character();
   level = level1;
-  endboss = new Endboss();
   canvas;
   ctx;
   keyboard;
@@ -119,7 +118,6 @@ class World {
     this.addObjectsToMap(this.level.enemies);
     this.addToMap(this.character);
     this.addObjectsToMap(this.throwableObjects);
-    this.addToMap(this.endboss);
     this.addObjectsToMap(this.level.coins);
     this.addObjectsToMap(this.level.bottle);
     this.ctx.translate(-this.camera_x, 0); // move canva back
