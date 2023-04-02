@@ -57,20 +57,20 @@ class Endboss extends MovableObject {
 
   firstContactToEndboss() {
     setInterval(() => {
-      if (this.x - world.character.x < 200) {
-        this.playAnimation(this.images_alert);
+      if (world.level.endboss[0].x < world.character.x + 400) {
         this.hadFirstContact = true;
+        this.bossAlert();
       }
       if (this.hadFirstContact) {
         this.animate();
       }
-    }, 500);
+    }, 120);
   }
 
   animate() {
     setInterval(() => {
       if (this.hadFirstContact) {
-        this.moveLeft();
+        this.bossMoveLeft();
       }
     }, 120);
   }
@@ -78,9 +78,21 @@ class Endboss extends MovableObject {
   /**
    * Starts the animation for the endboss. Endboss is moving left and endboss sound starts.
    */
-  moveLeft() {
+  bossMoveLeft() {
     super.moveLeft();
     this.playAnimation(this.images_walking);
     this.otherDirection = false;
+  }
+
+  bossAlert() {
+    this.playAnimation(this.images_alert);
+  }
+
+  bossDead() {
+    this.playAnimation(this.images_dead);
+  }
+
+  bossHurt() {
+    this.playAnimation(this.images_hurt);
   }
 }

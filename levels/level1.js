@@ -8,11 +8,12 @@ function createLevel1(world) {
       new Chicken(world),
       new Chicken(world),
       new Chicken(world),
-      new Endboss(world),
       new Chicken(world),
       new Chicken(world),
       new Chicken(world),
     ],
+    [new Endboss(world)],
+
     [
       new Cloud("./img/5_background/layers/4_clouds/1.png", 100),
       new Cloud("./img/5_background/layers/4_clouds/2.png", 600),
