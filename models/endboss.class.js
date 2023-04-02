@@ -8,6 +8,7 @@ class Endboss extends MovableObject {
     left: 0,
     right: 0,
   };
+  hadFirstContact = false;
 
   images_alert = [
     "img/4_enemie_boss_chicken/2_alert/G5.png",
@@ -40,6 +41,8 @@ class Endboss extends MovableObject {
     "img/4_enemie_boss_chicken/5_dead/G26.png",
   ];
 
+  world;
+
   constructor() {
     super().loadImage(this.images_alert[0]);
     this.loadImages(this.images_alert);
@@ -52,7 +55,12 @@ class Endboss extends MovableObject {
 
   animate() {
     setInterval(() => {
-      this.playAnimation(this.images_walking);
+      if (this.hadFirstContact) {
+        this.playAnimation(this.images_walking);
+      }
+      // if (this.world..ch) {
+      //   this.playAnimation(this.images_alert);
+      // }
     }, 200);
   }
 }

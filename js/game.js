@@ -6,6 +6,7 @@ let keyboard = new Keyboard();
 function init() {
   canvas = document.getElementById("canvas");
   world = new World(canvas, keyboard);
+  level1 = createLevel1(world)
   console.log("My Character is", world.character);
 }
 

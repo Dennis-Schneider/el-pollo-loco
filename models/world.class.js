@@ -1,6 +1,5 @@
 class World {
   character = new Character();
-  level = level1;
   canvas;
   ctx;
   keyboard;
@@ -15,9 +14,10 @@ class World {
     this.ctx = canvas.getContext("2d");
     this.canvas = canvas;
     this.keyboard = keyboard;
-    this.draw();
     this.setWorld();
+    this.level = createLevel1(this);
     this.run();
+    this.draw();
   }
 
   setWorld() {
