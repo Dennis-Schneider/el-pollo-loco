@@ -74,28 +74,22 @@ class World {
     }
   }
 
-  /**
-   * Checks collision between throwing bottle and the endboss.
-   */
   checkBottleHitEndboss() {
-    this.throwAbleObject.forEach((bottle) => {
+    this.throwableObjects.forEach((bottle) => {
       this.level.endboss.forEach((endboss) => {
         if (bottle.isColliding(endboss)) {
           endboss.hitEndboss();
           // this.statusBarEndboss.setPercentage(endboss.energy);
           // bottle_smash.play();
           // chicken_dead_sound.play();
-          setTimeout(() => {
-            this.eraseThrowingBottleFromArray(bottle);
-          }, 180);
+          // setTimeout(() => {
+          //   this.eraseThrowingBottleFromArray(bottle);
+          // }, 180);
         }
       });
     });
   }
 
-  /**
-   * check if the enemy hits in front/back or from top
-   */
   checkFromWhereColiding() {
     if (this.character.isAboveGround()) {
       this.hitChickenfromTop();
@@ -104,9 +98,6 @@ class World {
     }
   }
 
-  /**
-   * if hit the enemy from top, the character dont loose energy, so only the chicken does
-   */
   hitChickenfromTop() {
     this.level.enemies.forEach((enemies) => {
       if (
