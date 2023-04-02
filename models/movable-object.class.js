@@ -4,11 +4,7 @@ class MovableObject extends DrawableObject {
   acceleration = 2;
   otherDirection = false;
   energy = 100;
-  energyEndboss = 100;
-  bottle = 0;
-  coins = 0;
   lastHit = 0;
-  energyChicken = 50;
   lastMove = 0;
   splash = false;
   offset = {
@@ -80,9 +76,9 @@ class MovableObject extends DrawableObject {
    * when the enemies are hitet, subtract 50
    */
   chickenHit() {
-    this.energyChicken -= 50;
-    if (this.energyChicken <= 0) {
-      this.energyChicken = 0;
+    this.energy -= 50;
+    if (this.energy <= 0) {
+      this.energy = 0;
     }
   }
 
@@ -102,6 +98,16 @@ class MovableObject extends DrawableObject {
     let timepassed = new Date().getTime() - this.lastHit;
     timepassed = timepassed / 1000; // Difference in seconds
     return timepassed < 0.8;
+  }
+
+  /**
+   * Calculates the time since the endboss was last hitted.
+   * @returns {number} The time which is passed since last hit.
+   */
+  isHurtEndboss() {
+    let timepassed = new Date().getTime() - this.lastHit;
+    timepassed = timepassed / 1000;
+    return timepassed < 0.5;
   }
 
   isDead() {

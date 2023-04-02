@@ -104,7 +104,7 @@ class World {
         this.character.isColliding(enemies) && // pepe is colliding AND...
         this.character.isAboveGround() // ...above ground - also springend!
       ) {
-        if (enemies.energyChicken == 50) {
+        if (enemies.energy == 50) {
           enemies.chickenHit();
           this.character.jumpAfterKill();
         }

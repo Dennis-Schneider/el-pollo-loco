@@ -69,8 +69,12 @@ class Endboss extends MovableObject {
 
   animate() {
     setInterval(() => {
-      if (this.hadFirstContact) {
+      if (this.isDead) {
+        this.bossDead();
+      } else if (!this.hadFirstContact) {
         this.bossMoveLeft();
+      } else if (!this.isDead() && this.isHurtEndboss()) {
+        this.bossHurt();
       }
     }, 120);
   }

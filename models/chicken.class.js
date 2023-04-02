@@ -2,6 +2,7 @@ class Chicken extends MovableObject {
   height = 80;
   width = 80;
   y = 350;
+  energy = 50;
   offset = {
     top: 0,
     bottom: 0,
@@ -35,7 +36,7 @@ class Chicken extends MovableObject {
     }, 1000 / 60);
 
     setInterval(() => {
-      if (this.energyChicken == 0) {
+      if (this.energy == 0) {
         this.speed = 0;
         this.playAnimation(this.images_death);
       } else {
