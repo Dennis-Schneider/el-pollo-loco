@@ -59,7 +59,9 @@ class ThrowableObject extends MovableObject {
 
   splashBottle() {
     this.splashInterval = setInterval(() => {
-      if (this.y >= 320) {
+      if (world.level.endboss[0].isHurtEndboss()) {
+        this.playAnimation(this.image_bottle_splash);
+      } else if (this.y >= 320) {
         this.playAnimation(this.image_bottle_splash);
         // this.soundSplash();
       } else if (world.character.splash == true) {
@@ -71,6 +73,6 @@ class ThrowableObject extends MovableObject {
       } else if (this.y <= 360) {
         this.playAnimation(this.image_bottle_rotation);
       }
-    }, 60);
+    }, 1000 / 25);
   }
 }
