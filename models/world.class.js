@@ -5,6 +5,7 @@ class World {
   keyboard;
   camera_x = 0;
   statusBar = new StatusBar();
+  statusBarEndboss = new StatusBarEndboss();
   bottleBar = new BottleBar();
   coinBar = new CoinBar();
   throwableObjects = [];
@@ -79,7 +80,7 @@ class World {
       this.level.endboss.forEach((endboss) => {
         if (bottle.isColliding(endboss)) {
           endboss.hitEndboss();
-          // this.statusBarEndboss.setPercentage(endboss.energy);
+          this.statusBarEndboss.setPercentage(endboss.energy);
           // bottle_smash.play();
           // chicken_dead_sound.play();
           // setTimeout(() => {
@@ -134,6 +135,7 @@ class World {
     this.addObjectsToMap(this.level.bottle);
     this.ctx.translate(-this.camera_x, 0); // move canva back
     this.addToMap(this.statusBar);
+    this.addToMap(this.statusBarEndboss);
     this.addToMap(this.bottleBar);
     this.addToMap(this.coinBar);
     this.ctx.translate(this.camera_x, 0); // move canva forwards
