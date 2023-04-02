@@ -83,12 +83,17 @@ class World {
           this.statusBarEndboss.setPercentage(endboss.energy);
           // bottle_smash.play();
           // chicken_dead_sound.play();
-          // setTimeout(() => {
-          //   this.eraseThrowingBottleFromArray(bottle);
-          // }, 180);
+          setTimeout(() => {
+            this.eraseThrowingBottle(bottle);
+          }, 180);
         }
       });
     });
+  }
+
+  eraseThrowingBottle(bottle) {
+    let i = this.throwableObjects.indexOf(bottle);
+    this.throwableObjects.splice(i, 1);
   }
 
   checkFromWhereColiding() {
