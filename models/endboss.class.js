@@ -56,11 +56,20 @@ class Endboss extends MovableObject {
   animate() {
     setInterval(() => {
       if (this.hadFirstContact) {
-        this.playAnimation(this.images_walking);
+        this.moveLeft();
+      } else if (this.x - world.character.x < 200) {
+        this.playAnimation(this.images_alert);
+        this.hadFirstContact = true;
       }
-      // if (this.world..ch) {
-      //   this.playAnimation(this.images_alert);
-      // }
-    }, 200);
+    }, 120);
+  }
+
+  /**
+   * Starts the animation for the endboss. Endboss is moving left and endboss sound starts.
+   */
+  moveLeft() {
+    super.moveLeft();
+    this.playAnimation(this.images_walking);
+    this.otherDirection = false;
   }
 }
