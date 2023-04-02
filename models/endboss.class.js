@@ -2,13 +2,15 @@ class Endboss extends MovableObject {
   height = 400;
   width = 250;
   y = 50;
+  speed = 15;
+  hadFirstContact = false;
+  speedThroughHit = 50;
   offset = {
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
   };
-  hadFirstContact = false;
 
   images_alert = [
     "img/4_enemie_boss_chicken/2_alert/G5.png",
@@ -49,17 +51,26 @@ class Endboss extends MovableObject {
     this.loadImages(this.images_walking);
     this.loadImages(this.images_hurt);
     this.loadImages(this.images_dead);
-    this.x = 800;
-    this.animate();
+    this.firstContactToEndboss();
+    this.x = 2000; // position endboss
+  }
+
+  firstContactToEndboss() {
+    setInterval(() => {
+      if (this.x - world.character.x < 200) {
+        this.playAnimation(this.images_alert);
+        this.hadFirstContact = true;
+      }
+      if (this.hadFirstContact) {
+        this.animate();
+      }
+    }, 500);
   }
 
   animate() {
     setInterval(() => {
       if (this.hadFirstContact) {
         this.moveLeft();
-      } else if (this.x - world.character.x < 200) {
-        this.playAnimation(this.images_alert);
-        this.hadFirstContact = true;
       }
     }, 120);
   }
