@@ -10,6 +10,7 @@ class World {
   coinBar = new CoinBar();
   throwableObjects = [];
   collectedBottle = [];
+  collectedCoins = [];
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -31,6 +32,8 @@ class World {
       this.checkCollectionBottles();
       this.checkCollisions();
       this.checkThrowObject();
+      this.checkCollectionCoins();
+      this.coinIsCollected();
       this.checkBottleHitEndboss();
     }, 200);
   }
@@ -57,6 +60,33 @@ class World {
           // this.bottleCollectSound();
           this.level.bottle.splice(i, 1);
         }
+      }
+    }
+  }
+
+  /**
+   * check if pepe collected the coin and play the coinCollectSound
+   */
+  checkCollectionCoins() {
+    this.level.coins.forEach((coins) => {
+      if (this.character.isColliding(coins)) {
+        this.character.collectCoins();
+        // this.collectedCoins.push(coins);
+
+        // this.coinCollectSound();
+        this.coinBar.setPercentage(this.character.coins);
+      }
+    });
+  }
+
+  /**
+   *  collect the Coin an move it off screen
+   */
+  coinIsCollected() {
+    for (let i = 0; i < this.level.coins.length; i++) {
+      const coin = this.level.coins[i];
+      if (this.character.isColliding(coin)) {
+        this.level.coins.splice(i, 1);
       }
     }
   }
