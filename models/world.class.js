@@ -30,6 +30,7 @@ class World {
       this.checkCollectionBottles();
       this.checkCollisions();
       this.checkThrowObject();
+      this.checkBottleHitEndboss();
     }, 200);
   }
 
@@ -71,6 +72,25 @@ class World {
       this.throwableObjects.push(collectedBottle);
       this.collectedBottle.splice(0, 1);
     }
+  }
+
+  /**
+   * Checks collision between throwing bottle and the endboss.
+   */
+  checkBottleHitEndboss() {
+    this.throwAbleObject.forEach((bottle) => {
+      this.level.endboss.forEach((endboss) => {
+        if (bottle.isColliding(endboss)) {
+          endboss.hitEndboss();
+          // this.statusBarEndboss.setPercentage(endboss.energy);
+          // bottle_smash.play();
+          // chicken_dead_sound.play();
+          setTimeout(() => {
+            this.eraseThrowingBottleFromArray(bottle);
+          }, 180);
+        }
+      });
+    });
   }
 
   /**

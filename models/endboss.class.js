@@ -79,7 +79,7 @@ class Endboss extends MovableObject {
    * Starts the animation for the endboss. Endboss is moving left and endboss sound starts.
    */
   bossMoveLeft() {
-    super.moveLeft();
+    // super.moveLeft();
     this.playAnimation(this.images_walking);
     this.otherDirection = false;
   }

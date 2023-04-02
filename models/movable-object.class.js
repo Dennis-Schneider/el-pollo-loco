@@ -4,6 +4,7 @@ class MovableObject extends DrawableObject {
   acceleration = 2;
   otherDirection = false;
   energy = 100;
+  energyEndboss = 100;
   bottle = 0;
   coins = 0;
   lastHit = 0;
@@ -82,6 +83,18 @@ class MovableObject extends DrawableObject {
     this.energyChicken -= 50;
     if (this.energyChicken <= 0) {
       this.energyChicken = 0;
+    }
+  }
+
+  /**
+   * Decreases life of the endboss when hit. Sets time stamp for last hit.
+   */
+  hitEndboss() {
+    this.energy -= 20;
+    if (this.energy < 0) {
+      this.energy = 0;
+    } else {
+      this.lastHit = new Date().getTime();
     }
   }
 
