@@ -18,9 +18,6 @@ class Bottle extends MovableObject {
     this.animate();
   }
 
-  /**
-   * draw/animate in interval the bottles are laying on ground, when not taken
-   */
   animate() {
     setInterval(() => {
       this.playAnimation(this.images_bottle_ground);

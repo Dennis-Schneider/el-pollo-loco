@@ -1,5 +1,5 @@
 class MovableObject extends DrawableObject {
-  speed = 0.15;
+  speed = 0;
   speedY = 0;
   acceleration = 2;
   otherDirection = false;
@@ -33,11 +33,6 @@ class MovableObject extends DrawableObject {
     }
   }
 
-  /**
-   * check if the moveable objects are colliding each other
-   * @param {object} mo moveable object
-   * @returns parameter from with, height & offsets
-   */
   isColliding(mo) {
     return (
       this.x + this.width - this.offset.right > mo.x + mo.offset.left &&
@@ -47,18 +42,12 @@ class MovableObject extends DrawableObject {
     );
   }
 
-  /**
-   * when coin is collectable, add 20 to this.coin
-   */
   collectCoins() {
     if (this.coins < 100) {
       this.coins += 20;
     }
   }
 
-  /**
-   * when bottle is collectable, add 20 to this.bottle
-   */
   collectBottle() {
     if (this.bottle < 100) {
       this.bottle += 20;
@@ -74,9 +63,6 @@ class MovableObject extends DrawableObject {
     }
   }
 
-  /**
-   * when the enemies are hitet, subtract 50
-   */
   chickenHit() {
     this.energy -= 50;
     if (this.energy <= 0) {
@@ -84,9 +70,6 @@ class MovableObject extends DrawableObject {
     }
   }
 
-  /**
-   * Decreases life of the endboss when hit. Sets time stamp for last hit.
-   */
   hitEndboss() {
     this.energy -= 20;
     if (this.energy < 0) {
@@ -102,10 +85,6 @@ class MovableObject extends DrawableObject {
     return timepassed < 0.8;
   }
 
-  /**
-   * Calculates the time since the endboss was last hitted.
-   * @returns {number} The time which is passed since last hit.
-   */
   isHurtEndboss() {
     let timepassed = new Date().getTime() - this.lastHit;
     timepassed = timepassed / 1000;
@@ -145,9 +124,6 @@ class MovableObject extends DrawableObject {
     this.speedY = 25;
   }
 
-  /**
-   * the the height of the jump after kill
-   */
   jumpAfterKill() {
     this.speedY = 15;
   }

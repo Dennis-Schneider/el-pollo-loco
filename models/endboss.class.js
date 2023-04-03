@@ -2,9 +2,8 @@ class Endboss extends MovableObject {
   height = 400;
   width = 250;
   y = 50;
-  speed = 15;
+  speed = 5;
   hadFirstContact = false;
-  speedThroughHit = 50;
   offset = {
     top: 0,
     bottom: 0,
@@ -56,12 +55,14 @@ class Endboss extends MovableObject {
   }
 
   firstContactToEndboss() {
+    let i = 0;
     setInterval(() => {
-      if (world.level.endboss[0].x < world.character.x + 400) {
-        this.hadFirstContact = true;
+      if (i < 10 && this.distanceToBoss(500)) {
         this.bossAlert();
-      }
-      if (this.hadFirstContact) {
+        this.hadFirstContact = true;
+        console.log("changed contact");
+        i++;
+      } else if (this.hadFirstContact) {
         this.animate();
       }
     }, 120);
@@ -71,21 +72,21 @@ class Endboss extends MovableObject {
     setInterval(() => {
       if (this.isDead()) {
         this.bossDead();
-      } else if (!this.hadFirstContact) {
+      } else if (!this.isDead() && this.distanceToBoss(300)) {
         this.bossMoveLeft();
       } else if (!this.isDead() && this.isHurtEndboss()) {
         this.bossHurt();
       }
-    }, 120);
+    }, 200);
   }
 
-  /**
-   * Starts the animation for the endboss. Endboss is moving left and endboss sound starts.
-   */
+  distanceToBoss(distance) {
+    return world.level.endboss[0].x - world.character.x < distance;
+  }
+
   bossMoveLeft() {
-    // super.moveLeft();
+    this.x -= this.speed;
     this.playAnimation(this.images_walking);
-    this.otherDirection = false;
   }
 
   bossAlert() {

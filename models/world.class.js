@@ -77,9 +77,6 @@ class World {
     }
   }
 
-  /**
-   * check if pepe collected the coin and play the coinCollectSound
-   */
   checkCollectionCoins() {
     this.level.coins.forEach((coins) => {
       if (this.character.isColliding(coins)) {
@@ -92,9 +89,6 @@ class World {
     });
   }
 
-  /**
-   *  collect the Coin an move it off screen
-   */
   coinIsCollected() {
     for (let i = 0; i < this.level.coins.length; i++) {
       const coin = this.level.coins[i];
@@ -124,8 +118,6 @@ class World {
         if (bottle.isColliding(endboss)) {
           endboss.hitEndboss();
           this.statusBarEndboss.setPercentage(endboss.energy);
-          // bottle_smash.play();
-          // chicken_dead_sound.play();
           setTimeout(() => {
             this.eraseThrowingBottle(bottle);
           }, 180);
