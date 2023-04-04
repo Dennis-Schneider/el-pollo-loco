@@ -1,6 +1,6 @@
 @font-face {
   font-family: "rio-grande";
-  src: url("/fonts/rio-grande.ttf") format("truetype");
+  src: url("./fonts/rio-grande.ttf") format("truetype");
 }
 
 * {
