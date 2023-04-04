@@ -63,10 +63,8 @@ class ThrowableObject extends MovableObject {
         this.playAnimation(this.image_bottle_splash);
       } else if (this.y >= 320) {
         this.playAnimation(this.image_bottle_splash);
-        // this.soundSplash();
       } else if (world.character.splash == true) {
         this.playAnimation(this.image_bottle_splash);
-        // this.soundSplash();
         setTimeout(() => {
           clearInterval(this.splashinterval);
         }, 60);

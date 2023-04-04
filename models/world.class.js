@@ -70,7 +70,6 @@ class World {
       for (let i = 0; i < this.level.bottle.length; i++) {
         const bottle = this.level.bottle[i];
         if (this.character.isColliding(bottle)) {
-          // this.bottleCollectSound();
           this.level.bottle.splice(i, 1);
         }
       }
@@ -83,7 +82,6 @@ class World {
         this.character.collectCoins();
         // this.collectedCoins.push(coins);
 
-        // this.coinCollectSound();
         this.coinBar.setPercentage(this.character.coins);
       }
     });
