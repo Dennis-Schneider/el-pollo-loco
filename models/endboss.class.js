@@ -2,7 +2,7 @@ class Endboss extends MovableObject {
   height = 400;
   width = 250;
   y = 50;
-  speed = 5;
+  speed = 25;
   hadFirstContact = false;
   offset = {
     top: 0,
@@ -69,15 +69,13 @@ class Endboss extends MovableObject {
   }
 
   animate() {
-    setInterval(() => {
-      if (this.isDead()) {
-        this.bossDead();
-      } else if (!this.isDead() && this.distanceToBoss(300)) {
-        this.bossMoveLeft();
-      } else if (!this.isDead() && this.isHurtEndboss()) {
-        this.bossHurt();
-      }
-    }, 200);
+    if (this.isDead()) {
+      this.bossDead();
+    } else if (!this.isDead() && this.distanceToBoss(300)) {
+      this.bossMoveLeft();
+    } else if (!this.isDead() && this.isHurtEndboss()) {
+      this.bossHurt();
+    }
   }
 
   distanceToBoss(distance) {
