@@ -3,11 +3,29 @@ let ctx;
 let world;
 let keyboard = new Keyboard();
 
-function init() {
+function init() {}
+
+function startGame() {
+  toggleVisibility("loading-screen");
+  level1 = createLevel1(world);
+  initWorld();
+  setTimeout(() => {
+    toggleVisibility("loading-screen");
+  }, 3000);
+}
+
+function initWorld() {
   canvas = document.getElementById("canvas");
   world = new World(canvas, keyboard);
-  level1 = createLevel1(world);
-  console.log("My Character is", world.character);
+}
+
+function toggleVisibility(id) {
+  let element = document.getElementById(id);
+  if (element.classList.contains("d-none")) {
+    element.classList.remove("d-none");
+  } else {
+    element.classList.add("d-none");
+  }
 }
 
 window.addEventListener("keydown", (event) => {

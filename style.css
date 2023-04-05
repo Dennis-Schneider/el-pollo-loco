@@ -16,6 +16,7 @@ body {
   justify-content: center;
   background-image: url("img/5_background/background.png");
   background-position: center;
+  background-size: cover;
   font-family: "rio-grande", Arial, Helvetica, sans-serif;
   min-height: 100vh;
   backdrop-filter: blur(5px) brightness(0.8);
@@ -39,4 +40,108 @@ canvas {
   border-radius: 25px;
   background-color: black;
   box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
+}
+
+.d-none {
+  display: none !important;
+}
+
+#loading-screen {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+/* loading */
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-family: "rio-grande", Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  color: #ffffff;
+}
+
+span {
+  position: relative;
+  top: 0.63em;
+  display: inline-block;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+
+.let1 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.let2 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.let3 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.let4 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.let5 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.let6 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.let7 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+@keyframes drop {
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+  80% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    top: 6.94em;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  canvas {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  canvas {
+    height: 100vh;
+  }
+
+  h1 {
+    display: none;
+  }
 }

@@ -28,12 +28,30 @@
     <script src="./models/throwable-object.class.js"></script>
     <script src="./models/endboss.class.js"></script>
     <script src="./levels/level1.js"></script>
+
     <script src="./js/game.js"></script>
     <title>🔫 El Pollo Loco 🏜️</title>
   </head>
 
-  <body onload="init()">
+  <body>
     <h1 onclick="window.location.reload()">( El pollo loco )</h1>
-    <canvas id="canvas" width="720" height="480"></canvas>
+    <button onclick="startGame()">Start game</button>
+    <div id="loading-screen" class="d-none">
+      <h2>
+        <span class="let1">l</span>
+        <span class="let2">o</span>
+        <span class="let3">a</span>
+        <span class="let4">d</span>
+        <span class="let5">i</span>
+        <span class="let6">n</span>
+        <span class="let7">g</span>
+      </h2>
+    </div>
+    <section id="canva-section">
+      <canvas id="canvas" width="720" height="480"></canvas>
+      <div class="start-screen"></div>
+      <div class="win-screen"></div>
+      <div class="loose-screen"></div>
+    </section>
   </body>
 </html>
