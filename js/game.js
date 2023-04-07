@@ -20,6 +20,10 @@ function initWorld() {
   world = new World(canvas, keyboard);
 }
 
+function clearAllIntervals() {
+  for (let i = 1; i < 9999; i++) window.clearInterval(i);
+}
+
 function toggleVisibility(id) {
   let element = document.getElementById(id);
   if (element.classList.contains("d-none")) {
@@ -51,10 +55,12 @@ function display(id) {
 
 function win() {
   showScreen("win-screen");
+  clearAllIntervals();
 }
 
 function gameOver() {
   showScreen("game-over-screen");
+  clearAllIntervals();
 }
 
 window.addEventListener("keydown", (event) => {
