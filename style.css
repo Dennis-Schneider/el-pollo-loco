@@ -63,10 +63,10 @@ canvas {
 
 /* Button layout */
 button {
-  margin-left: 25px; /* trying to align image */
   text-align: center;
   padding: 5px;
   width: 180px;
+  height: 50px;
   border-radius: 15px;
   border-color: var(--brown-dark);
   transition: all 0.25s ease;
@@ -94,10 +94,21 @@ button:hover {
   letter-spacing: 3px;
 }
 
-.btn-start {
-  position: absolute;
-  right: 30px;
-  top: 30px;
+.icon {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border-radius: 50%;
+  background: linear-gradient(var(--yellow) 25%, 75%, var(--orange));
+}
+
+.icon img {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  transition: all 0.5s ease;
+}
+
+.icon:hover img {
+  transform: scale(1.2);
 }
 
 .d-none {
@@ -130,6 +141,13 @@ button:hover {
   background-image: url("img/9_intro_outro_screens/start/startscreen_2.png");
   background-size: cover;
   background-position: center;
+}
+
+.btn-section-top {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
 }
 
 .center {
