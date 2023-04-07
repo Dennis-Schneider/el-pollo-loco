@@ -36,6 +36,10 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+h2 span {
+  color: #ffde00;
+}
+
 canvas {
   border-radius: 25px;
   background-color: black;
@@ -46,10 +50,31 @@ canvas {
   display: none !important;
 }
 
+#canva-section {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
 #loading-screen {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  backdrop-filter: blur(5px) brightness(0.5);
   position: absolute;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
+  z-index: 1;
+}
+
+#start-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/9_intro_outro_screens/start/startscreen_2.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* loading */

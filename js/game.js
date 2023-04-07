@@ -6,11 +6,14 @@ let keyboard = new Keyboard();
 function init() {}
 
 function startGame() {
-  toggleVisibility("loading-screen");
-  level1 = createLevel1(world);
-  initWorld();
+  display("loading-screen");
   setTimeout(() => {
-    toggleVisibility("loading-screen");
+    level1 = createLevel1(world);
+    initWorld();
+  }, 2500);
+  setTimeout(() => {
+    hide("start-screen");
+    hide("loading-screen");
   }, 3000);
 }
 
@@ -26,6 +29,14 @@ function toggleVisibility(id) {
   } else {
     element.classList.add("d-none");
   }
+}
+
+function hide(id) {
+  document.getElementById(id).classList.add("d-none");
+}
+
+function display(id) {
+  document.getElementById(id).classList.remove("d-none");
 }
 
 window.addEventListener("keydown", (event) => {
