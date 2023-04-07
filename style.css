@@ -1,3 +1,10 @@
+:root {
+  --yellow: #ffdd00;
+  --yellow-dark: #d8bc00;
+  --orange: #ffa100;
+  --brown-dark: #a0220a;
+}
+
 @font-face {
   font-family: "rio-grande";
   src: url("./fonts/rio-grande.ttf") format("truetype");
@@ -51,9 +58,46 @@ h3:hover {
 }
 
 canvas {
-  border-radius: 25px;
   background-color: black;
-  box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
+}
+
+/* Button layout */
+button {
+  margin-left: 25px; /* trying to align image */
+  text-align: center;
+  padding: 5px;
+  width: 180px;
+  border-radius: 15px;
+  border-color: var(--brown-dark);
+  transition: all 0.25s ease;
+}
+
+button div {
+  font-family: "rio-grande", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px;
+  border-radius: 10px;
+  background: linear-gradient(var(--yellow) 25%, 75%, var(--orange));
+}
+
+button div:before {
+  content: "\1F414  Start \1F414";
+}
+
+button div:hover {
+  background: linear-gradient(var(--orange) 25%, 75%, var(--yellow));
+}
+
+button:hover {
+  box-shadow: 0 0 10px 6px var(--yellow);
+  letter-spacing: 3px;
+}
+
+.btn-start {
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
 .d-none {
@@ -64,6 +108,7 @@ canvas {
   position: relative;
   border-radius: 25px;
   overflow: hidden;
+  box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
 }
 
 #loading-screen {
@@ -85,12 +130,6 @@ canvas {
   background-image: url("img/9_intro_outro_screens/start/startscreen_2.png");
   background-size: cover;
   background-position: center;
-}
-
-#win-screen {
-}
-
-#game-over-screen {
 }
 
 .center {
