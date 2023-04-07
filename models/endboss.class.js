@@ -93,6 +93,7 @@ class Endboss extends MovableObject {
 
   bossDead() {
     this.playAnimation(this.images_dead);
+    win();
   }
 
   bossHurt() {

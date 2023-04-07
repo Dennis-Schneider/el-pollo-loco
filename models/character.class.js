@@ -138,7 +138,7 @@ class Character extends MovableObject {
         }, 2000);
         setTimeout(() => {
           // looseGame = true;
-          // endIfDead();
+          gameOver();
         }, 1500);
       } else if (this.isHurt()) {
         // if (winGame == false) {

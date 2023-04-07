@@ -3,18 +3,16 @@ let ctx;
 let world;
 let keyboard = new Keyboard();
 
-function init() {}
-
 function startGame() {
-  display("loading-screen");
-  setTimeout(() => {
-    level1 = createLevel1(world);
-    initWorld();
-  }, 2500);
-  setTimeout(() => {
-    hide("start-screen");
-    hide("loading-screen");
-  }, 3000);
+  // display("loading-screen");
+  // setTimeout(() => {
+  level1 = createLevel1(world);
+  initWorld();
+  // }, 2500);
+  // setTimeout(() => {
+  hide("start-screen");
+  //   hide("loading-screen");
+  // }, 3000);
 }
 
 function initWorld() {
@@ -31,12 +29,32 @@ function toggleVisibility(id) {
   }
 }
 
+function restartGame() {
+  showScreen("start-screen");
+}
+
+function showScreen(name) {
+  hide("loading-screen");
+  hide("start-screen");
+  hide("game-over-screen");
+  hide("win-screen");
+  display(name);
+}
+
 function hide(id) {
   document.getElementById(id).classList.add("d-none");
 }
 
 function display(id) {
   document.getElementById(id).classList.remove("d-none");
+}
+
+function win() {
+  showScreen("win-screen");
+}
+
+function gameOver() {
+  showScreen("game-over-screen");
 }
 
 window.addEventListener("keydown", (event) => {

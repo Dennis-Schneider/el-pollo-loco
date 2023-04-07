@@ -35,7 +35,7 @@
 
   <body>
     <h1 onclick="window.location.reload()">( El pollo loco )</h1>
-    <button onclick="startGame()">Start game</button>
+    <button onclick="restartGame()">Restart</button>
 
     <section id="canva-section">
       <div id="loading-screen" class="d-none">
@@ -50,6 +50,8 @@
         </h2>
       </div>
       <div id="start-screen" onclick="startGame()"></div>
+      <div id="game-over-screen" onclick="restartGame()" class="d-none"></div>
+      <div id="win-screen" onclick="restartGame()" class="d-none"></div>
       <canvas id="canvas" width="720" height="480"></canvas>
       <div class="start-screen"></div>
       <div class="win-screen"></div>
