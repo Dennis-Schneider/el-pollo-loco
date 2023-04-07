@@ -50,8 +50,24 @@
         </h2>
       </div>
       <div id="start-screen" onclick="startGame()"></div>
-      <div id="game-over-screen" onclick="restartGame()" class="d-none"></div>
-      <div id="win-screen" onclick="restartGame()" class="d-none"></div>
+      <div
+        id="game-over-screen"
+        class="endscreen center column"
+        onclick="restartGame()"
+        class="d-none"
+      >
+        <h2>( You loose! )</h2>
+        <h3 class="pointer" onclick="restartGame()">try again</h3>
+      </div>
+      <div
+        id="win-screen"
+        class="endscreen center column"
+        onclick="restartGame()"
+        class="d-none"
+      >
+        <h2>( You won! )</h2>
+        <h3 class="pointer" onclick="restartGame()">try again</h3>
+      </div>
       <canvas id="canvas" width="720" height="480"></canvas>
       <div class="start-screen"></div>
       <div class="win-screen"></div>
