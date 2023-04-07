@@ -77,6 +77,17 @@ canvas {
   background-position: center;
 }
 
+#win-screen {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  backdrop-filter: blur(5px) brightness(0.5);
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 #game-over-screen {
   position: absolute;
   width: 100%;
