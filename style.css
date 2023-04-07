@@ -95,20 +95,35 @@ button:hover {
 }
 
 .icon {
+  gap: 15px;
   width: 50px;
   height: 50px;
-  padding: 8px;
-  border-radius: 50%;
+  padding: 10px;
+  border-radius: 25px;
   background: linear-gradient(var(--yellow) 25%, 75%, var(--orange));
 }
 
 .icon img {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s ease;
+}
+.icon p {
+  display: none;
+}
+
+.icon:hover {
+  width: auto;
   transition: all 0.5s ease;
 }
 
 .icon:hover img {
   transform: scale(1.2);
+}
+
+.icon:hover p {
+  display: unset;
 }
 
 .d-none {
