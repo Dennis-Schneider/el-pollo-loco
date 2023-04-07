@@ -111,6 +111,7 @@ button:hover {
 }
 .icon p {
   display: none;
+  color: var(--brown-dark);
 }
 
 .icon:hover {
