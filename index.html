@@ -54,7 +54,7 @@
             <img src="./img/icons/controls.svg" />
             <p>Controls</p>
           </div>
-          <div class="icon center">
+          <div class="icon center" onclick="toggleVisibility('game-story')">
             <img src="./img/icons/story.svg" />
             <p>Story</p>
           </div>
@@ -66,21 +66,51 @@
       </div>
       <div
         id="game-over-screen"
-        class="endscreen center column"
+        class="endscreen center column d-none"
         onclick="restartGame()"
-        class="d-none"
       >
         <h2>( You loose! )</h2>
         <h3 class="pointer" onclick="restartGame()">try again</h3>
       </div>
       <div
         id="win-screen"
-        class="endscreen center column"
+        class="endscreen center column d-none"
         onclick="restartGame()"
-        class="d-none"
       >
         <h2>( You won! )</h2>
         <h3 class="pointer" onclick="restartGame()">try again</h3>
+      </div>
+      <div
+        id="game-controls"
+        class="endscreen center column d-none"
+        onclick="toggleVisibility('game-controls')"
+      >
+        <h2>Pepes challenge</h2>
+        <h3 class="infotext">This is the story of Pepe and El Pollo Loco.</h3>
+        <p class="infotext">
+          El Pollo Loco is a video game in which the character Pepe fights
+          against chickens and collects coins. He must save the village of
+          Pueblo Pequeno from a horde of wild chickens. Pepe fights his way
+          through the chicken farm, dodging obstacles and collecting coins for
+          upgrades. After defeating the leader of the chickens, El Pollo Loco,
+          Pepe is celebrated as a hero.
+        </p>
+      </div>
+      <div
+        id="game-story"
+        class="endscreen center column d-none"
+        onclick="toggleVisibility('game-story')"
+      >
+        <h2>Pepes challenge</h2>
+        <h3 class="infotext">This is the story of Pepe and El Pollo Loco.</h3>
+        <p class="infotext">
+          El Pollo Loco is a video game in which the character Pepe fights
+          against chickens and collects coins. He must save the village of
+          Pueblo Pequeno from a horde of wild chickens. Pepe fights his way
+          through the chicken farm, dodging obstacles and collecting coins for
+          upgrades. After defeating the leader of the chickens, El Pollo Loco,
+          Pepe is celebrated as a hero.
+        </p>
       </div>
       <canvas id="canvas" width="720" height="480"></canvas>
       <div class="start-screen"></div>
