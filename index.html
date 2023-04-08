@@ -50,7 +50,7 @@
       </div>
       <div id="start-screen">
         <div class="btn-section-top">
-          <div class="icon center">
+          <div class="icon center" onclick="toggleVisibility('game-controls')">
             <img src="./img/icons/controls.svg" />
             <p>Controls</p>
           </div>
@@ -85,16 +85,31 @@
         class="endscreen center column d-none"
         onclick="toggleVisibility('game-controls')"
       >
-        <h2>Pepes challenge</h2>
-        <h3 class="infotext">This is the story of Pepe and El Pollo Loco.</h3>
-        <p class="infotext">
-          El Pollo Loco is a video game in which the character Pepe fights
-          against chickens and collects coins. He must save the village of
-          Pueblo Pequeno from a horde of wild chickens. Pepe fights his way
-          through the chicken farm, dodging obstacles and collecting coins for
-          upgrades. After defeating the leader of the chickens, El Pollo Loco,
-          Pepe is celebrated as a hero.
-        </p>
+        <h2>Game Controls</h2>
+        <div class="controls-line center">
+          <div class="controls-line-elements">
+            <img src="./img/icons/arrow.svg" class="controls-img arrow-left" />
+            <h3 class="controls-description">Move left</h3>
+          </div>
+        </div>
+        <div class="controls-line center">
+          <div class="controls-line-elements">
+            <img src="./img/icons/arrow.svg" class="controls-img arrow-right" />
+            <h3 class="controls-description">Move right</h3>
+          </div>
+        </div>
+        <div class="controls-line center">
+          <div class="controls-line-elements">
+            <img src="./img/icons/arrow.svg" class="controls-img" />
+            <h3 class="controls-description">Jump</h3>
+          </div>
+        </div>
+        <div class="controls-line center">
+          <div class="controls-line-elements">
+            <p class="controls-img e-throw center">E</p>
+            <h3 class="controls-description">Throw bottle</h3>
+          </div>
+        </div>
       </div>
       <div
         id="game-story"
