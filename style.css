@@ -64,6 +64,9 @@ canvas {
   border-radius: 25px;
   background: linear-gradient(var(--yellow) 25%, 75%, var(--orange));
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.498);
+  overflow: hidden;
+  transition: opacity 0.5s ease-in 1s;
+  transition: opacity 0.3s ease-out 0s;
 }
 
 .icon img {
@@ -73,7 +76,9 @@ canvas {
   transition: all 0.3s ease-in-out;
 }
 .icon p {
-  display: none;
+  position: absolute;
+  width: 0px;
+  opacity: 0;
   color: var(--brown-dark);
 }
 
@@ -87,7 +92,9 @@ canvas {
 }
 
 .icon:hover p {
-  display: unset;
+  position: unset;
+  width: unset;
+  opacity: 1;
 }
 
 .d-none {
