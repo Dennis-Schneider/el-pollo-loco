@@ -91,13 +91,10 @@ window.addEventListener("resize", function (event) {
 });
 
 function checkForMobile() {
+  const isMobile = navigator.userAgentData.mobile;
   let cs = document.getElementById("canva-section");
   let canvas = document.getElementById("canvas");
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
+  if (isMobile) {
     cs.style.borderRadius = "0";
     cs.style.height = "100vh";
     canvas.style.width = "100vw";
@@ -109,11 +106,8 @@ function checkForMobile() {
 }
 
 function checkForMobileStartGame() {
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
+  const isMobile = navigator.userAgentData.mobile;
+  if (isMobile) {
     display("game-controls-mobile");
   } else {
     hide("game-controls-mobile");
