@@ -108,17 +108,16 @@ canvas {
   box-shadow: 4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37);
 }
 
-#loading-screen {
+/* #loading-screen {
   width: 100%;
   height: 100%;
-  /* background-color: black; */
   backdrop-filter: blur(5px) brightness(0.5);
   position: absolute;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   z-index: 1;
-}
+} */
 
 #start-screen {
   position: absolute;
@@ -306,8 +305,8 @@ span {
   }
 }
 
-@media only screen and (max-width: 720px) {
-  canvas {
+@media only screen and (max-width: 820px) {
+  #canva-section {
     width: 100%;
   }
 }
