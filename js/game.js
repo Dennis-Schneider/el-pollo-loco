@@ -97,11 +97,11 @@ function checkForMobile() {
   if (isMobile) {
     cs.style.borderRadius = "0";
     cs.style.height = "100vh";
-    canvas.style.width = "100vw";
+    cs.style.width = "100vw";
   } else {
     cs.style.borderRadius = "25px";
     cs.style.height = "unset";
-    canvas.style.width = "unset";
+    cs.style.width = "unset";
   }
 }
 
