@@ -13,7 +13,7 @@ class StatusBarEndboss extends DrawableObject {
   constructor() {
     super();
     this.loadImages(this.images);
-    this.x = 500;
+    this.x = 600;
     this.y = 15;
     this.width = 200;
     this.height = 34;

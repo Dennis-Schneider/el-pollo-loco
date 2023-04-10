@@ -13,7 +13,7 @@ function startGame() {
 function initWorld() {
   canvas = document.getElementById("canvas");
   world = new World(canvas, keyboard);
-  checkForMobile();
+  // checkForMobile();
 }
 
 function clearAllIntervals() {
@@ -86,28 +86,32 @@ function exitFullscreen() {
   }
 }
 
-window.addEventListener("resize", function (event) {
-  checkForMobile();
-});
+// window.addEventListener("resize", function (event) {
+//   checkForMobile();
+// });
 
-function checkForMobile() {
-  const isMobile = navigator.userAgentData.mobile;
-  let cs = document.getElementById("canva-section");
-  let canvas = document.getElementById("canvas");
-  if (isMobile) {
-    cs.style.borderRadius = "0";
-    cs.style.height = "100vh";
-    cs.style.width = "100vw";
-  } else {
-    cs.style.borderRadius = "25px";
-    cs.style.height = "unset";
-    cs.style.width = "unset";
-  }
-}
+// function checkForMobile() {
+//   const isMobile = navigator.userAgentData.mobile;
+//   let cs = document.getElementById("canva-section");
+//   let canvas = document.getElementById("canvas");
+//   if (isMobile) {
+//     cs.style.borderRadius = "0";
+//     cs.style.height = "100vh";
+//     cs.style.width = "100vw";
+//   } else {
+//     cs.style.borderRadius = "25px";
+//     cs.style.height = "unset";
+//     cs.style.width = "unset";
+//   }
+// }
 
 function checkForMobileStartGame() {
   const isMobile = navigator.userAgentData.mobile;
-  if (isMobile) {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
     display("game-controls-mobile");
   } else {
     hide("game-controls-mobile");
