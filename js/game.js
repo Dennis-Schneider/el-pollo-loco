@@ -7,7 +7,7 @@ function startGame() {
   level1 = createLevel1(world);
   initWorld();
   hide("start-screen");
-  checkForMobileStartGame();
+  // checkForMobileStartGame();
 }
 
 function initWorld() {
@@ -105,18 +105,18 @@ function exitFullscreen() {
 //   }
 // }
 
-function checkForMobileStartGame() {
-  const isMobile = navigator.userAgentData.mobile;
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    display("game-controls-mobile");
-  } else {
-    hide("game-controls-mobile");
-  }
-}
+// function checkForMobileStartGame() {
+//   const isMobile = navigator.userAgentData.mobile;
+//   if (
+//     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+//       navigator.userAgent
+//     )
+//   ) {
+//     display("game-controls-mobile");
+//   } else {
+//     hide("game-controls-mobile");
+//   }
+// }
 
 window.addEventListener("keydown", (event) => {
   if (event.key == "ArrowRight" || event.key == "d") {

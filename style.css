@@ -138,11 +138,12 @@ canvas {
 }
 
 #game-controls-mobile {
+  display: none;
   position: absolute;
   bottom: 5px;
   left: 5px;
   right: 5px;
-  display: flex;
+
   justify-content: space-between;
   z-index: 4;
 }
