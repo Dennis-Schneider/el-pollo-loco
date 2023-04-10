@@ -146,6 +146,9 @@ class World {
         if (enemies.energy == 50) {
           enemies.chickenHit();
           this.character.jumpAfterKill();
+          setTimeout(() => {
+            this.eraseEnemyFromArray(enemies);
+          }, 750);
         }
       }
     });
@@ -162,6 +165,11 @@ class World {
         }
       }
     });
+  }
+
+  eraseEnemyFromArray(enemy) {
+    let i = this.level.enemies.indexOf(enemy);
+    this.level.enemies.splice(i, 1);
   }
 
   draw() {
