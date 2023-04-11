@@ -87,6 +87,9 @@ class Character extends MovableObject {
     this.animate();
   }
 
+  /**
+   * The function animates the character's movement and updates the camera position.
+   */
   animate() {
     setInterval(() => {
       if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
@@ -97,33 +100,17 @@ class Character extends MovableObject {
         this.moveLeft();
         this.otherDirection = true;
       }
-
       if (this.world.keyboard.UP && !this.isAboveGround()) {
         this.jump();
       }
-
       this.world.camera_x = -this.x + 85;
     }, 1000 / 60);
-
     this.characterAnimations();
-
-    // setInterval(() => {
-    //   if (this.isDead()) {
-    //     this.playAnimation(this.images_dead);
-    //   } else if (this.isHurt()) {
-    //     this.playAnimation(this.images_hurt);
-    //   }
-    //   if (this.isAboveGround()) {
-    //     this.playAnimation(this.images_jumping);
-    //   } else {
-    //     if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-    //       // Walk animation
-    //       this.playAnimation(this.images_walking);
-    //     }
-    //   }
-    // }, 130);
   }
 
+  /**
+   * The function controls the character's animations based on their current state and user input.
+   */
   characterAnimations() {
     let intervalId = setInterval(() => {
       if (this.isDead()) {
@@ -132,12 +119,9 @@ class Character extends MovableObject {
           clearInterval(intervalId);
         }, 2000);
         setTimeout(() => {
-          // looseGame = true;
           gameOver();
         }, 1500);
       } else if (this.isHurt()) {
-        // if (winGame == false) {
-        // }
         this.playAnimation(this.images_hurt);
       } else if (this.isAboveGround()) {
         this.getMoveTimeStamp();
@@ -147,8 +131,6 @@ class Character extends MovableObject {
         this.playAnimation(this.images_walking);
       } else if (this.fallInSleep() && !this.isAboveGround()) {
         this.playAnimation(this.images_long_idle);
-        // if (winGame == false) {
-        // }
       } else {
         this.playAnimation(this.images_idle);
       }

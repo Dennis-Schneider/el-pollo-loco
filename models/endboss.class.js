@@ -54,6 +54,10 @@ class Endboss extends MovableObject {
     this.x = 2000; // position endboss
   }
 
+  /**
+   * The function checks if the distance to a boss is less than 500 and alerts the boss if it is, and
+   * then animates if there has been previous contact.
+   */
   firstContactToEndboss() {
     let i = 0;
     setInterval(() => {
@@ -68,6 +72,10 @@ class Endboss extends MovableObject {
     }, 120);
   }
 
+  /**
+   * The function controls the animation of a boss character in a game based on its current state and
+   * position.
+   */
   animate() {
     if (this.isDead()) {
       this.bossDead();
@@ -80,26 +88,49 @@ class Endboss extends MovableObject {
     }
   }
 
+  /**
+   * The function calculates if the distance between the character and the end boss is less than a given
+   * distance.
+   * @param distance - The distance parameter is a number that represents the maximum distance between
+   * the character and the end boss that we want to check. The function will return true if the distance
+   * between the character and the end boss is less than this value, and false otherwise.
+   * @returns a boolean value. It is checking if the distance between the character's x-coordinate and
+   * the end boss's x-coordinate is less than the given distance parameter. If it is less, then it
+   * returns true, otherwise it returns false.
+   */
   distanceToBoss(distance) {
     return world.level.endboss[0].x - world.character.x < distance;
   }
 
+  /**
+   * This function moves the boss character to the left and plays a walking animation.
+   */
   bossMoveLeft() {
     this.x -= this.speed;
     this.playAnimation(this.images_walking);
     this.otherDirection = false;
   }
 
+  /**
+   * The function moves the boss character to the right and plays a walking animation.
+   */
   bossMoveRight() {
     this.x += this.speed;
     this.playAnimation(this.images_walking);
     this.otherDirection = true;
   }
 
+  /**
+   * The function "bossAlert" plays an animation using the "images_alert" parameter.
+   */
   bossAlert() {
     this.playAnimation(this.images_alert);
   }
 
+  /**
+   * The function bossDead() plays a death animation and sound, then calls the win() function after a 2
+   * second delay.
+   */
   bossDead() {
     this.playAnimation(this.images_dead);
     playSound(winSound, 0.2);
@@ -108,6 +139,9 @@ class Endboss extends MovableObject {
     }, 2000);
   }
 
+  /**
+   * The bossHurt function plays a specific animation and sound effect when called.
+   */
   bossHurt() {
     this.playAnimation(this.images_hurt);
     playSound(bottleSplashSound, 0.2);

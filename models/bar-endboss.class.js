@@ -20,12 +20,26 @@ class StatusBarEndboss extends DrawableObject {
     this.setPercentage(100);
   }
 
+  /**
+   * The function sets the percentage property of an object and updates the image displayed based on the
+   * new percentage.
+   * @param percentage - The percentage parameter is a number that represents the progress or completion
+   * percentage of a task or process. It is used to update the image displayed by the code, based on the
+   * current progress.
+   */
   setPercentage(percentage) {
     this.percentage = percentage;
     let path = this.images[this.resolveImageIndex()];
     this.img = this.imageCache[path];
   }
 
+  /**
+   * The function returns an image index based on a percentage value.
+   * @returns The function `resolveImageIndex()` returns an integer value between 0 and 5 based on the
+   * value of the `percentage` property of the object calling the function. The value returned
+   * corresponds to the index of an image to be displayed, with 0 being the lowest and 5 being the
+   * highest.
+   */
   resolveImageIndex() {
     if (this.percentage == 100) {
       return 5;
