@@ -101,6 +101,7 @@ function display(id) {
 }
 
 function win() {
+  walkingSound.muted = true;
   showScreen("win-screen");
   hide("game-controls-mobile");
   clearAllIntervals();
@@ -109,6 +110,7 @@ function win() {
 
 function gameOver() {
   playSound(gameOverSound, 0.5);
+  walkingSound.muted = true;
   stopAllSounds();
   showScreen("game-over-screen");
   hide("game-controls-mobile");
