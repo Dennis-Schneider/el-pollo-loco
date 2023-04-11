@@ -244,9 +244,44 @@ canvas {
 /* toggle Sound */
 
 #sound-screen {
+  position: absolute;
+  top: 0;
+  right: 250px;
+  left: 250px;
 }
 
-////////////////////////////////////////////* loading *////////////////////////////////////////////
+.icon-sound {
+  gap: 15px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 25px;
+  background: linear-gradient(var(--yellow) 25%, 75%, var(--orange));
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.498);
+  overflow: hidden;
+  transition: opacity 0.5s ease-in 1s;
+  transition: opacity 0.3s ease-out 0s;
+}
+
+.icon-sound img {
+  filter: invert(98%) sepia(100%) saturate(16%) hue-rotate(239deg)
+    brightness(104%) contrast(100%) drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-sound:hover img {
+  transform: scale(1.3);
+}
+
+.icon-sound:hover p {
+  position: unset;
+  width: unset;
+  opacity: 1;
+}
+
+/* loading */
 
 h2 {
   margin: 0;

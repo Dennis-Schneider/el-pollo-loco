@@ -46,8 +46,30 @@ function playSound(sound, volume) {
   sound.volume = volume;
 }
 
+function toggleSounds() {
+  let soundImg = document.getElementById("sound-image");
+  if (soundImg.src.includes("_on")) {
+    soundImg.src = "./img/icons/volume_off.svg";
+    toggleAllSounds(true);
+  } else if (soundImg.src.includes("_off")) {
+    soundImg.src = "./img/icons/volume_on.svg";
+    toggleAllSounds(false);
+  }
+}
+
 function stopSound(sound) {
   sound.pause();
+}
+
+function toggleAllSounds(status) {
+  backgroundMusic.muted = status;
+  chickenSound.muted = status;
+  bottleThrowSound.muted = status;
+  bottleSplashSound.muted = status;
+  winSound.muted = status;
+  walkingSound.muted = status;
+  ouchSound.muted = status;
+  gameOverSound.muted = status;
 }
 
 function stopAllSounds() {
