@@ -55,6 +55,7 @@ class ThrowableObject extends MovableObject {
       }, 20);
     }
     this.applyGravity();
+    playSound(bottleThrowSound, 0.2);
   }
 
   splashBottle() {

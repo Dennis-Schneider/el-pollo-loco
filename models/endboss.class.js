@@ -71,12 +71,12 @@ class Endboss extends MovableObject {
   animate() {
     if (this.isDead()) {
       this.bossDead();
+    } else if (!this.isDead() && this.isHurtEndboss()) {
+      this.bossHurt();
     } else if (!this.isDead() && this.distanceToBoss(-100)) {
       this.bossMoveRight();
     } else if (!this.isDead() && this.distanceToBoss(500)) {
       this.bossMoveLeft();
-    } else if (!this.isDead() && this.isHurtEndboss()) {
-      this.bossHurt();
     }
   }
 
@@ -102,6 +102,7 @@ class Endboss extends MovableObject {
 
   bossDead() {
     this.playAnimation(this.images_dead);
+    playSound(winSound, 0.2);
     setTimeout(() => {
       win();
     }, 2000);
@@ -109,5 +110,6 @@ class Endboss extends MovableObject {
 
   bossHurt() {
     this.playAnimation(this.images_hurt);
+    playSound(bottleSplashSound, 0.2);
   }
 }

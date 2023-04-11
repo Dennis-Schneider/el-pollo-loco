@@ -15,9 +15,11 @@ class Keyboard {
     window.addEventListener("keydown", (event) => {
       if (event.key == "ArrowRight" || event.key == "d") {
         keyboard.RIGHT = true;
+        playSound(walkingSound, 1);
       }
       if (event.key == "ArrowLeft" || event.key == "a") {
         keyboard.LEFT = true;
+        playSound(walkingSound, 1);
       }
       if (event.key == "ArrowUp" || event.key == "w" || event.key == " ") {
         keyboard.UP = true;
@@ -30,9 +32,11 @@ class Keyboard {
     window.addEventListener("keyup", (event) => {
       if (event.key == "ArrowRight" || event.key == "d") {
         keyboard.RIGHT = false;
+        stopSound(walkingSound);
       }
       if (event.key == "ArrowLeft" || event.key == "a") {
         keyboard.LEFT = false;
+        stopSound(walkingSound);
       }
       if (event.key == "ArrowUp" || event.key == "w" || event.key == " ") {
         keyboard.UP = false;

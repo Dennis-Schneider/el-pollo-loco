@@ -146,6 +146,7 @@ class World {
       ) {
         if (enemies.energy == 50) {
           enemies.chickenHit();
+          playSound(chickenSound, 0.2);
           this.character.jumpAfterKill();
           setTimeout(() => {
             this.eraseEnemyFromArray(enemies);

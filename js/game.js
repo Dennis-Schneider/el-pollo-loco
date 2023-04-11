@@ -3,10 +3,22 @@ let ctx;
 let world;
 let keyboard = new Keyboard();
 
+// sounds
+let backgroundMusic = new Audio("./audio/western-music.mp3");
+let chickenSound = new Audio("./audio/chicken.mp3");
+let bottleThrowSound = new Audio("./audio/bottle-throw.mp3");
+let bottleSplashSound = new Audio("./audio/bottle-splash.mp3");
+let winSound = new Audio("./audio/win.mp3");
+let walkingSound = new Audio("./audio/walking.mp3");
+let ouchSound = new Audio("./audio/ouch.mp3");
+let gameOverSound = new Audio("./audio/gameover.mp3");
+
 function startGame() {
   level1 = createLevel1(world);
   initWorld();
   hide("start-screen");
+  playSound(backgroundMusic, 0.05);
+
   // checkForMobileStartGame();
 }
 
@@ -27,6 +39,23 @@ function toggleVisibility(id) {
   } else {
     element.classList.add("d-none");
   }
+}
+
+function playSound(sound, volume) {
+  sound.play();
+  sound.volume = volume;
+}
+
+function stopSound(sound) {
+  sound.pause();
+}
+
+function stopAllSounds() {
+  stopSound(backgroundMusic);
+  stopSound(chickenSound);
+  stopSound(bottleThrowSound);
+  stopSound(bottleSplashSound);
+  stopSound(ouchSound);
 }
 
 function restartGame() {
@@ -53,9 +82,12 @@ function win() {
   showScreen("win-screen");
   hide("game-controls-mobile");
   clearAllIntervals();
+  stopAllSounds();
 }
 
 function gameOver() {
+  playSound(gameOverSound, 0.5);
+  stopAllSounds();
   showScreen("game-over-screen");
   hide("game-controls-mobile");
   clearAllIntervals();
