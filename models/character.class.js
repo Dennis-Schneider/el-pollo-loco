@@ -7,7 +7,7 @@ class Character extends MovableObject {
     top: 110,
     bottom: 10,
     left: 20,
-    right: 20,
+    right: 30,
   };
 
   images_idle = [
