@@ -71,7 +71,9 @@ class Endboss extends MovableObject {
   animate() {
     if (this.isDead()) {
       this.bossDead();
-    } else if (!this.isDead() && this.distanceToBoss(300)) {
+    } else if (!this.isDead() && this.distanceToBoss(-100)) {
+      this.bossMoveRight();
+    } else if (!this.isDead() && this.distanceToBoss(500)) {
       this.bossMoveLeft();
     } else if (!this.isDead() && this.isHurtEndboss()) {
       this.bossHurt();
@@ -85,6 +87,13 @@ class Endboss extends MovableObject {
   bossMoveLeft() {
     this.x -= this.speed;
     this.playAnimation(this.images_walking);
+    this.otherDirection = false;
+  }
+
+  bossMoveRight() {
+    this.x += this.speed;
+    this.playAnimation(this.images_walking);
+    this.otherDirection = true;
   }
 
   bossAlert() {
