@@ -367,6 +367,10 @@ span {
     height: 100vh;
   }
 
+  #game-controls-mobile {
+    display: flex;
+  }
+
   h1 {
     display: none;
   }
