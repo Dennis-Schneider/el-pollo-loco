@@ -18,6 +18,9 @@ class Bottle extends MovableObject {
     this.animate();
   }
 
+  /**
+   * The function animates a bottle image and checks if the bottle has been collected.
+   */
   animate() {
     setInterval(() => {
       this.playAnimation(this.images_bottle_ground);

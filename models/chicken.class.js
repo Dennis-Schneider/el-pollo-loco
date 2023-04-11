@@ -30,11 +30,14 @@ class Chicken extends MovableObject {
     this.animate();
   }
 
+  /**
+   * The function animates a character by continuously moving it left and playing different animations
+   * based on its state.
+   */
   animate() {
     setInterval(() => {
       this.moveLeft();
     }, 1000 / 60);
-
     setInterval(() => {
       if (this.isDead()) {
         this.speed = 0;

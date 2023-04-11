@@ -22,12 +22,25 @@ class BottleBar extends DrawableObject {
     this.setPercentage(0);
   }
 
+  /**
+   * The function sets the percentage of a bottle and updates the image accordingly.
+   * @param percentage - The percentage parameter is a number that represents the percentage of the
+   * bottle that should be filled. This method is likely part of a larger program that simulates filling
+   * a bottle with liquid, and this parameter is used to update the image of the bottle to reflect the
+   * current fill level.
+   */
   setPercentage(percentage) {
     this.percentage = percentage;
     let path = this.images_bottle[this.resolveImgIndex()];
     this.img = this.imageCache[path];
   }
 
+  /**
+   * The function returns an index value based on the percentage value.
+   * @returns The function `resolveImgIndex()` returns a number between 0 and 5 based on the value of the
+   * `percentage` property. The returned number represents an index that can be used to select an image
+   * to display.
+   */
   resolveImgIndex() {
     if (this.percentage == 100) {
       return 5;
