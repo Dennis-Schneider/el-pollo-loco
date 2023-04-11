@@ -141,7 +141,8 @@ class World {
     this.level.enemies.forEach((enemies) => {
       if (
         this.character.isColliding(enemies) && // pepe is colliding AND...
-        this.character.isAboveGround() // ...above ground - also springend!
+        this.character.isAboveGround() && // ...above ground - also springend!
+        !this.character.isHurt()
       ) {
         if (enemies.energy == 50) {
           enemies.chickenHit();
