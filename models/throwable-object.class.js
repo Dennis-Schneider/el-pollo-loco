@@ -42,16 +42,16 @@ class ThrowableObject extends MovableObject {
   }
 
   throw() {
-    this.speedY = 20;
+    this.speedY = 25; //Wurfhöhe
     if (world.character.otherDirection == false) {
-      this.x = world.character.x + 65;
+      this.x = world.character.x + 50; // Abwurf-Abstand zu Pepe
       setInterval(() => {
-        this.x += 4.5;
+        this.x += 7; //Wurfweite
       }, 20);
     } else {
-      this.x = world.character.x - 30;
+      this.x = world.character.x - 30; // Abwurf-Abstand zu Pepe
       setInterval(() => {
-        this.x -= 2.5;
+        this.x -= 7; //Wurfweite Rückwärts
       }, 20);
     }
     this.applyGravity();
