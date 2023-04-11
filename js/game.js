@@ -118,6 +118,8 @@ function exitFullscreen() {
   }
 }
 
+// toggle Sound
+
 // window.addEventListener("resize", function (event) {
 //   checkForMobile();
 // });

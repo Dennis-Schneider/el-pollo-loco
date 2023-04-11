@@ -241,7 +241,12 @@ canvas {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* loading */
+/* toggle Sound */
+
+#sound-screen {
+}
+
+////////////////////////////////////////////* loading *////////////////////////////////////////////
 
 h2 {
   margin: 0;
