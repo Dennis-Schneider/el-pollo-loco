@@ -230,6 +230,17 @@ canvas {
   justify-content: center;
 }
 
+#rotate-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* loading */
 
 h2 {
@@ -308,6 +319,25 @@ span {
   }
 }
 
+/* Pulse animation */
+
+.pulsate {
+  -webkit-animation: pulsate 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 @media only screen and (max-width: 820px) {
   canvas {
     width: 100vw;
@@ -321,9 +351,13 @@ span {
   #game-controls-mobile {
     display: flex;
   }
+
+  h1 {
+    display: none;
+  }
 }
 
-@media only screen and (max-height: 480px) {
+@media only screen and (max-height: 620px) {
   #canva-section {
     height: 100vh;
   }
@@ -333,5 +367,16 @@ span {
 
   h1 {
     display: none;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  h1 {
+    display: none;
+  }
+
+  #rotate-screen {
+    display: flex;
+    z-index: 5;
   }
 }
