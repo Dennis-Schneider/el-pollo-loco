@@ -11,6 +11,13 @@ class Keyboard {
     this.eventTouchpadBtns();
   }
 
+  /* The `eventKeyboardBtns()` function is adding an event listener to the window object for the
+  "keydown" event. When a key is pressed, the function inside the event listener is executed. The
+  function checks which key was pressed and sets the corresponding property of the Keyboard object
+  to true. If the pressed key is "ArrowRight" or "d", the RIGHT property is set to true and a sound
+  called "walkingSound" is played. If the pressed key is "ArrowLeft" or "a", the LEFT property is
+  set to true and the "walkingSound" is played. If the pressed key is "ArrowUp", "w", or " ", the UP
+  property is set to true. If the pressed key is "e", the D property is set to true. */
   eventKeyboardBtns() {
     window.addEventListener("keydown", (event) => {
       if (event.key == "ArrowRight" || event.key == "d") {
@@ -29,6 +36,13 @@ class Keyboard {
       }
     });
 
+    /* This code is adding an event listener to the window object for the "keyup" event. When a key is
+    released, the function inside the event listener is executed. The function checks which key was
+    released and sets the corresponding property of the Keyboard object to false. If the released
+    key is "ArrowRight" or "d", the RIGHT property is set to false and a sound called "walkingSound"
+    is stopped. If the released key is "ArrowLeft" or "a", the LEFT property is set to false and the
+    "walkingSound" is stopped. If the released key is "ArrowUp", "w", or " ", the UP property is set
+    to false. If the released key is "e", the D property is set to false. */
     window.addEventListener("keyup", (event) => {
       if (event.key == "ArrowRight" || event.key == "d") {
         keyboard.RIGHT = false;
@@ -47,6 +61,9 @@ class Keyboard {
     });
   }
 
+  /**
+   * This function adds touch event listeners to control buttons for a game.
+   */
   eventTouchpadBtns() {
     setTimeout(() => {
       document

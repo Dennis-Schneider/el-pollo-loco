@@ -36,11 +36,18 @@ class ThrowableObject extends MovableObject {
     this.animate();
   }
 
+  /**
+   * The animate function calls the throw and splashBottle methods.
+   */
   animate() {
     this.throw();
     this.splashBottle();
   }
 
+  /**
+   * The function throws a bottle from the character's position with a certain speed and direction while
+   * applying gravity and playing a sound.
+   */
   throw() {
     this.speedY = 25; //Wurfhöhe
     if (world.character.otherDirection == false) {
@@ -58,6 +65,9 @@ class ThrowableObject extends MovableObject {
     playSound(bottleThrowSound, 0.2);
   }
 
+  /**
+   * The function splashBottle() plays different animations based on certain conditions.
+   */
   splashBottle() {
     this.splashInterval = setInterval(() => {
       if (world.level.endboss[0].isHurtEndboss()) {
