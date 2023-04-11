@@ -165,6 +165,16 @@ class World {
         }
       }
     });
+    this.level.endboss.forEach((boss) => {
+      if (this.character.isColliding(boss) && !this.character.isHurt()) {
+        if (this.character.isAboveGround()) {
+          this.hitChickenfromTop();
+        } else {
+          this.character.hit();
+          this.statusBar.setPercentage(this.character.energy);
+        }
+      }
+    });
   }
 
   eraseEnemyFromArray(enemy) {
